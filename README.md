@@ -1,7 +1,16 @@
 # build conda metapackages for pangeo dependencies
 
-![Action Status](https://github.com/pangeo-data/pangeo-stacks-dev/workflows/Metapackage/badge.svg)
+![Action Status](https://github.com/pangeo-data/conda-metapackages/workflows/Metapackage/badge.svg)
 
+
+### Using
+packages currently here: https://anaconda.org/pangeo/repo
+```
+conda install -c pangeo pangeo-dask
+```
+
+
+### Building
 Currently push to pangeo/ anaconda cloud repo, maybe later move to conda-forge
 
 * run this locally on a linux system (`docker run -v $PWD:$HOME -it continuumio/miniconda3:4.7.12 /bin/bash`)
