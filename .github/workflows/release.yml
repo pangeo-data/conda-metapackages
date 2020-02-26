@@ -34,4 +34,4 @@ jobs:
       shell: bash -l {0}
       run: |
         TAG="${GITHUB_REF##*/}"
-        conda-metapackage pangeo-notebook $TAG --user $CONDA_ORG --token ${{ secrets.ANACONDA_TOKEN }} --dependencies `cat notebook-packages.txt | xargs`  -c conda-forge --override-channels --license MIT --summary 'pangeo notebook dependencies' --home 'http://pangeo.io'
+        conda-metapackage pangeo-notebook $TAG --user $CONDA_ORG --token ${{ secrets.ANACONDA_TOKEN }} --dependencies `cat notebook-packages.txt | xargs`  -c conda-forge -c pangeo --override-channels --license MIT --summary 'pangeo notebook dependencies' --home 'http://pangeo.io'

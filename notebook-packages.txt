@@ -1,3 +1,4 @@
+pangeo-dask=0.0.0
 jupyterhub>=1.1
 jupyterlab>=1.2
 jupyter-server-proxy>=1.2
