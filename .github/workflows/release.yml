@@ -25,11 +25,13 @@ jobs:
          miniconda-version: 4.7.12
 
     - name: Build and Push pangeo-dask
+      shell: bash -l {0}
       run: |
         TAG="${GITHUB_REF##*/}"
         conda-metapackage pangeo-dask $TAG --user $CONDA_ORG --token ${{ secrets.ANACONDA_TOKEN }} --dependencies `cat dask-packages.txt | xargs`  -c conda-forge --override-channels --license MIT --summary 'pangeo dask dependencies' --home 'http://pangeo.io'
 
     - name: Build and Push pangeo-notebook
+      shell: bash -l {0}
       run: |
         TAG="${GITHUB_REF##*/}"
         conda-metapackage pangeo-notebook $TAG --user $CONDA_ORG --token ${{ secrets.ANACONDA_TOKEN }} --dependencies `cat notebook-packages.txt | xargs`  -c conda-forge --override-channels --license MIT --summary 'pangeo notebook dependencies' --home 'http://pangeo.io'
