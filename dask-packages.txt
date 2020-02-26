@@ -1,0 +1,4 @@
+dask>=2.11
+distributed>=2.11
+dask-kubernetes>=0.10
+tornado>=6

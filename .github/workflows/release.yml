@@ -1,0 +1,35 @@
+# Re-tag most recent staging image with github tag and latest
+name: Metapackage
+on:
+  push:
+    tags:
+    - '*'
+
+env:
+  CONDA_ORG: pangeo
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_REF: ${{ github.ref }}
+
+jobs:
+  metapackage:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Conda Environment
+      uses: goanpeca/setup-miniconda@v1
+      with:
+         environment-file: environment.yml
+         activate-environment: condabuild
+         miniconda-version: 4.7.12
+
+    - name: Build and Push pangeo-dask
+      run: |
+        TAG="${GITHUB_REF##*/}"
+        conda-metapackage pangeo-dask $TAG --user $CONDA_ORG --token ${{ secrets.ANACONDA_TOKEN }} --dependencies `cat dask-packages.txt | xargs`  -c conda-forge --override-channels --license MIT --summary 'pangeo dask dependencies' --home 'http://pangeo.io'
+
+    - name: Build and Push pangeo-notebook
+      run: |
+        TAG="${GITHUB_REF##*/}"
+        conda-metapackage pangeo-notebook $TAG --user $CONDA_ORG --token ${{ secrets.ANACONDA_TOKEN }} --dependencies `cat notebook-packages.txt | xargs`  -c conda-forge --override-channels --license MIT --summary 'pangeo notebook dependencies' --home 'http://pangeo.io'

@@ -1,0 +1,6 @@
+jupyterhub>=1.1
+jupyterlab>=1.2
+jupyter-server-proxy>=1.2
+nbgitpuller>=0.8
+dask-labextension>=1.1
+dask-gateway>=0.6

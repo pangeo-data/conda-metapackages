@@ -1,0 +1,7 @@
+name: condabuild
+channels:
+  - defaults
+dependencies:
+  - conda-build=3.18
+  - conda-verify=3.4
+  - anaconda-client=1.7
