@@ -1,6 +1,6 @@
 # build conda metapackages for pangeo dependencies
 
-![Action Status](https://github.com/pangeo-data/pangeo-stacks-dev/workflows/Metapackage/badge.svg)
+![Action Status](https://github.com/pangeo-data/conda-metapackages/workflows/Metapackage/badge.svg)
 
 Currently push to pangeo/ anaconda cloud repo, maybe later move to conda-forge
 
