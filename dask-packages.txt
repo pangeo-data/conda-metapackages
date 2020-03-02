@@ -1,4 +1,4 @@
-dask>=2.11
-distributed>=2.11
-dask-kubernetes>=0.10
-tornado>=6
+dask=2.*
+distributed=2.*
+dask-kubernetes=0.*
+tornado=6.*
