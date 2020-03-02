@@ -3,8 +3,9 @@
 ![Action Status](https://github.com/pangeo-data/conda-metapackages/workflows/Metapackage/badge.svg)
 
 **These metapackages are now on conda-forge, so you can create PRs to bump versions in the following repos:**
-https://github.com/conda-forge/pangeo-dask-feedstock
-https://github.com/conda-forge/pangeo-notebook-feedstock
+
+* https://github.com/conda-forge/pangeo-dask-feedstock
+* https://github.com/conda-forge/pangeo-notebook-feedstock
 
 
 ### Using
